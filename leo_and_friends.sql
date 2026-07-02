@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-07-2026 a las 00:02:13
+-- Tiempo de generación: 02-07-2026 a las 10:40:43
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -42,20 +42,18 @@ INSERT INTO `cuestionario_opciones` (`opcion_id`, `pregunta_id`, `texto_opcion`)
 (11, 1, '7 años'),
 (12, 1, '8 años'),
 (13, 1, '9 años o más'),
-(20, 2, 'Animales y Naturaleza 🐾'),
-(21, 2, 'Inventos, Ciencia y Dinosaurios 🚀'),
-(22, 2, 'Aventuras y Misterios divertidos 🕵️‍♂️'),
-(23, 2, 'Historias de Amistad y Monstruos buenos 💖'),
+(20, 2, 'Animales y Naturaleza'),
+(21, 2, 'Inventos, Ciencia y Dinosaurios'),
+(22, 2, 'Aventuras y Misterios divertidos'),
+(23, 2, 'Historias de Amistad y Monstruos buenos'),
 (30, 3, 'Nivel 1: Reconoce letras y une sus primeras palabras'),
-(31, 3, 'Nivel 2: Lee frases cortitas con ayuda de muchas imágenes'),
+(31, 3, 'Nivel 2: Lee frases cortas con ayuda'),
 (32, 3, 'Nivel 3: Lee cuentos breves e historias sencillas'),
 (33, 3, 'Nivel 4: Lee con más fluidez y comprende más texto'),
-(34, 3, 'Nivel 5: Disfruta de desafíos con cuentos más largos'),
 (40, 4, 'Tormentas o truenos ⚡'),
 (41, 4, 'La oscuridad 🌙'),
 (42, 4, 'Bichos o insectos 🐜'),
-(43, 4, 'Separarse de mamá o papá 💔'),
-(44, 4, 'Ninguno, ¡todo marcha bien! ✨'),
+(44, 4, 'Ninguno, ¡todo marcha bien!✨'),
 (50, 5, 'Mantener la concentración con historias dinámicas'),
 (51, 5, 'Comprender mejor lo que lee mediante juegos'),
 (52, 5, 'Ganar confianza leyendo textos amigables');
@@ -192,8 +190,11 @@ CREATE TABLE `libros` (
 --
 
 INSERT INTO `libros` (`libro_id`, `titulo`, `portada`, `tiempo_estimado`, `nivel_id`) VALUES
-(3, 'El Sol y la Nube', 'sun.png', 5, 1),
-(5, 'La Casita Feliz', 'casita.png', 5, 2);
+(3, 'El Sol y la Nube', 'ChatGPT Image 29 jun 2026, 09_21_39 a.m..png', 5, 1),
+(5, 'La Casita Feliz', 'ChatGPT Image 29 jun 2026, 09_21_52 a.m..png', 5, 2),
+(6, 'El Triceratops que quería volar al espacio', 'ChatGPT Image 2 jul 2026, 02_16_06 a.m..png', 8, 3),
+(7, 'El detective del bosque y las huellas secretas', 'ChatGPT Image 2 jul 2026, 02_20_03 a.m..png', 8, 3),
+(8, 'Leo el camaleón', 'ChatGPT Image 2 jul 2026, 02_32_43 a.m..png', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -312,7 +313,8 @@ CREATE TABLE `progreso` (
 --
 
 INSERT INTO `progreso` (`progresoID`, `userID`, `puntos`, `racha`, `nivel_actual`, `leccion_actual`, `porcentaje`, `fecha_actualizacion`, `modulo_actual`) VALUES
-(2, 18, 0, 0, 1, 1, 0, '2026-06-25 03:50:50', 'leo');
+(2, 18, 0, 0, 1, 1, 0, '2026-06-25 03:50:50', 'leo'),
+(3, 23, 0, 0, 1, 1, 0, '2026-07-02 08:01:55', 'leo');
 
 -- --------------------------------------------------------
 
@@ -403,7 +405,9 @@ INSERT INTO `usuarios` (`userID`, `nombre_nino`, `nombre_papa`, `correo`, `passw
 (18, 'Pedrito', 'Susana Gonzales', 'susanagonzales@gmail.com', '$2y$10$1LoqGMLe5JkGqTyBmX0xsOBewhho4sFEoiLM0iECJn13rYJ69BvWy', 'nino1.jpg', 'mama1.jpg', 'usuario', '2026-06-17 18:21:42', NULL, NULL),
 (19, 'Valeria', 'Carlos Ponce', 'carsloponcesoriano@gmail.com', '$2y$10$QO037MeeXdsL.KgnsSEvGOjt7kBBp.WAY7kmjllHWV7HrNsho0QJG', NULL, 'papa1.jpg', 'usuario', '2026-06-19 20:10:32', NULL, NULL),
 (20, 'Joshua', 'Daniel Valle', 'danielvalle@gmail.com', '$2y$10$LqCCtbm01bOULPymY.rM/OAF8cy9faaoVxkuL0dN5vypfm8Q84M9K', NULL, NULL, 'usuario', '2026-07-01 05:35:07', NULL, NULL),
-(21, 'messi goku', 'Byron Díaz', 'messi@gmail.com', '$2y$10$mrKJcEIFZoOi9spN56vzqed./NJRfOt.53skodoaLsKEMPtRRb/2e', NULL, NULL, 'usuario', '2026-07-01 15:01:45', NULL, NULL);
+(21, 'messi goku', 'Byron Díaz', 'messi@gmail.com', '$2y$10$mrKJcEIFZoOi9spN56vzqed./NJRfOt.53skodoaLsKEMPtRRb/2e', NULL, NULL, 'usuario', '2026-07-01 15:01:45', NULL, NULL),
+(22, 'Vinke', 'Kevin', 'kevin@mail.com', '$2y$10$63Q4TUjh.ypn516RER4MKOjKaqpFObICAeElvbhg9P8sYuNKtscs6', NULL, NULL, 'usuario', '2026-07-01 22:35:03', NULL, NULL),
+(23, 'Felipe', 'Lucas Fernández', 'lucasfernandez@gmail.com', '$2y$10$KbhWapcwxlPmDKtG6U3.guLnTXSql0njPynGnhVVhkDHv0otXkRYK', 'av_6a461a862e0ab7.49267755.jpg', 'av_6a461a862f7395.64985819.jpg', 'usuario', '2026-07-02 07:17:04', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -457,7 +461,17 @@ INSERT INTO `usuario_respuestas` (`usuario_id`, `opcion_id`) VALUES
 (21, 22),
 (21, 30),
 (21, 40),
-(21, 50);
+(21, 50),
+(22, 11),
+(22, 21),
+(22, 31),
+(22, 41),
+(22, 52),
+(23, 11),
+(23, 21),
+(23, 31),
+(23, 44),
+(23, 52);
 
 --
 -- Índices para tablas volcadas
@@ -676,7 +690,7 @@ ALTER TABLE `leo_progreso`
 -- AUTO_INCREMENT de la tabla `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `libro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `libro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `logros`
@@ -712,7 +726,7 @@ ALTER TABLE `paginas_libro`
 -- AUTO_INCREMENT de la tabla `progreso`
 --
 ALTER TABLE `progreso`
-  MODIFY `progresoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `progresoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `progreso_libros`
@@ -736,7 +750,7 @@ ALTER TABLE `silabas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario_logros`
