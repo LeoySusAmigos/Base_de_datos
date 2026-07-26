@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-07-2026 a las 07:23:04
+-- Tiempo de generación: 23-07-2026 a las 07:43:37
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -50,10 +50,10 @@ INSERT INTO `cuestionario_opciones` (`opcion_id`, `pregunta_id`, `texto_opcion`)
 (31, 3, 'Nivel 2: Lee frases cortas con ayuda'),
 (32, 3, 'Nivel 3: Lee cuentos breves e historias sencillas'),
 (33, 3, 'Nivel 4: Lee con más fluidez y comprende más texto'),
-(40, 4, 'Tormentas o truenos ⚡'),
-(41, 4, 'La oscuridad 🌙'),
-(42, 4, 'Bichos o insectos 🐜'),
-(44, 4, 'Ninguno, ¡todo marcha bien!✨'),
+(40, 4, 'Tormentas o truenos'),
+(41, 4, 'La oscuridad'),
+(42, 4, 'Bichos o insectos'),
+(44, 4, 'Ninguno, ¡todo marcha bien!'),
 (50, 5, 'Mantener la concentración con historias dinámicas'),
 (51, 5, 'Comprender mejor lo que lee mediante juegos'),
 (52, 5, 'Ganar confianza leyendo textos amigables');
@@ -109,6 +109,32 @@ CREATE TABLE `leo_lecciones` (
   `numero` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `leo_lecciones`
+--
+
+INSERT INTO `leo_lecciones` (`leccionID`, `nivelID`, `numero`, `nombre`) VALUES
+(1, 1, 1, 'Aprendiendo la A'),
+(2, 1, 2, 'Más palabras con A'),
+(3, 1, 3, 'Practiquemos la A'),
+(4, 1, 4, 'Dominando la A'),
+(5, 2, 1, 'Aprendiendo la E'),
+(6, 2, 2, 'Más palabras con E'),
+(7, 2, 3, 'Practiquemos la E'),
+(8, 2, 4, 'Dominando la E'),
+(9, 3, 1, 'Aprendiendo la I'),
+(10, 3, 2, 'Más palabras con I'),
+(11, 3, 3, 'Practiquemos la I'),
+(12, 3, 4, 'Dominando la I'),
+(13, 4, 1, 'Aprendiendo la O'),
+(14, 4, 2, 'Más palabras con O'),
+(15, 4, 3, 'Practiquemos la O'),
+(16, 4, 4, 'Dominando la O'),
+(17, 5, 1, 'Aprendiendo la U'),
+(18, 5, 2, 'Más palabras con U'),
+(19, 5, 3, 'Practiquemos la U'),
+(20, 5, 4, 'Dominando la U');
 
 -- --------------------------------------------------------
 
@@ -173,7 +199,22 @@ INSERT INTO `leo_niveles_desbloqueo` (`desbloqueoID`, `userID`, `nivelID`, `porc
 (25, 28, 2, 0.00, 0, NULL),
 (26, 28, 3, 0.00, 0, NULL),
 (27, 28, 4, 0.00, 0, NULL),
-(28, 28, 5, 0.00, 0, NULL);
+(28, 28, 5, 0.00, 0, NULL),
+(29, 29, 1, 0.00, 1, NULL),
+(30, 29, 2, 0.00, 0, NULL),
+(31, 29, 3, 0.00, 0, NULL),
+(32, 29, 4, 0.00, 0, NULL),
+(33, 29, 5, 0.00, 0, NULL),
+(34, 30, 1, 0.00, 1, NULL),
+(35, 30, 2, 0.00, 0, NULL),
+(36, 30, 3, 0.00, 0, NULL),
+(37, 30, 4, 0.00, 0, NULL),
+(38, 30, 5, 0.00, 0, NULL),
+(39, 31, 1, 0.00, 1, NULL),
+(40, 31, 2, 0.00, 0, NULL),
+(41, 31, 3, 0.00, 0, NULL),
+(42, 31, 4, 0.00, 0, NULL),
+(43, 31, 5, 0.00, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -189,6 +230,125 @@ CREATE TABLE `leo_palabras` (
   `imagen` varchar(255) NOT NULL,
   `audio` varchar(255) NOT NULL,
   `orden_palabra` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `leo_palabras`
+--
+
+INSERT INTO `leo_palabras` (`palabraID`, `leccionID`, `silaba`, `palabra`, `imagen`, `audio`, `orden_palabra`) VALUES
+(1, 1, 'Ba', 'Ballena', 'ballena.png', 'ballena.mp3', 1),
+(2, 1, 'Ca', 'Camisa', 'camisa.png', 'camisa.mp3', 2),
+(3, 1, 'Cha', 'Chaqueta', 'chaqueta.png', 'chaqueta.mp3', 3),
+(4, 1, 'Da', 'Dado', 'dado.png', 'dado.mp3', 4),
+(5, 1, 'Fa', 'Farol', 'farol.png', 'farol.mp3', 5),
+(6, 2, 'Ga', 'Gato', 'gato.png', 'gato.mp3', 1),
+(7, 2, 'Ha', 'Harina', 'harina.png', 'harina.mp3', 2),
+(8, 2, 'Ja', 'Jabalí', 'jabali.png', 'jabali.mp3', 3),
+(9, 2, 'Ka', 'Karate', 'karate.png', 'karate.mp3', 4),
+(10, 2, 'La', 'Lana', 'lana.png', 'lana.mp3', 5),
+(11, 3, 'Lla', 'Llave', 'llave.png', 'llave.mp3', 1),
+(12, 3, 'Ma', 'Mapa', 'mapa.png', 'mapa.mp3', 2),
+(13, 3, 'Na', 'Nariz', 'nariz.png', 'nariz.mp3', 3),
+(14, 3, 'Pa', 'Papas', 'papas.png', 'papas.mp3', 4),
+(15, 3, 'Ra', 'Ratón', 'raton.png', 'raton.mp3', 5),
+(16, 4, 'Sa', 'Sandía', 'sandia.png', 'sandia.mp3', 1),
+(17, 4, 'Ta', 'Taza', 'taza.png', 'taza.mp3', 2),
+(18, 4, 'Va', 'Vaca', 'vaca.png', 'vaca.mp3', 3),
+(19, 4, 'Wa', 'Waterpolo', 'waterpolo.png', 'waterpolo.mp3', 4),
+(20, 4, 'Za', 'Zapato', 'zapato.png', 'zapato.mp3', 5),
+(41, 5, 'Be', 'Bebé', 'bebe.png', 'bebe.mp3', 1),
+(42, 5, 'Ce', 'Cereza', 'cereza.png', 'cereza.mp3', 2),
+(43, 5, 'Che', 'Cheque', 'cheque.png', 'cheque.mp3', 3),
+(44, 5, 'De', 'Dedo', 'dedo.png', 'dedo.mp3', 4),
+(45, 5, 'Fe', 'Feria', 'feria.png', 'feria.mp3', 5),
+(46, 6, 'Ge', 'Gente', 'gente.png', 'gente.mp3', 1),
+(47, 6, 'He', 'Helado', 'helado.png', 'helado.mp3', 2),
+(48, 6, 'Je', 'Jeringa', 'jeringa.png', 'jeringa.mp3', 3),
+(49, 6, 'Le', 'Leopardo', 'leopardo.png', 'leopardo.mp3', 4),
+(50, 6, 'Me', 'Mesa', 'mesa.png', 'mesa.mp3', 5),
+(51, 7, 'Ne', 'Nene', 'nene.png', 'nene.mp3', 1),
+(52, 7, 'Pe', 'Perro', 'perro.png', 'perro.mp3', 2),
+(53, 7, 'Que', 'Queso', 'queso.png', 'queso.mp3', 3),
+(54, 7, 'Re', 'Reno', 'reno.png', 'reno.mp3', 4),
+(55, 7, 'Se', 'Semilla', 'semilla.png', 'semilla.mp3', 5),
+(56, 8, 'Te', 'Tetera', 'tetera.png', 'tetera.mp3', 1),
+(57, 8, 'Ve', 'Vela', 'vela.png', 'vela.mp3', 2),
+(58, 8, 'Web', 'Web', 'web.png', 'web.mp3', 3),
+(59, 8, 'Ze', 'Zebra', 'zebra.png', 'zebra.mp3', 5),
+(60, 9, 'Bi', 'Bicicleta', 'bicicleta.png', 'bicicleta.mp3', 1),
+(61, 9, 'Cis', 'Cisne', 'cisne.png', 'cisne.mp3', 2),
+(62, 9, 'Chi', 'Chile', 'chile.png', 'chile.mp3', 3),
+(63, 9, 'Dis', 'Disco', 'disco.png', 'disco.mp3', 4),
+(64, 9, 'Fi', 'Fideos', 'fideos.png', 'fideos.mp3', 5),
+(65, 10, 'Gi', 'Girasol', 'girasol.png', 'girasol.mp3', 1),
+(66, 10, 'Hi', 'Hilo', 'hilo.png', 'hilo.mp3', 2),
+(67, 10, 'Ji', 'Jirafa', 'jirafa.png', 'jirafa.mp3', 3),
+(68, 10, 'Ki', 'Kiwi', 'kiwi.png', 'kiwi.mp3', 4),
+(69, 10, 'Li', 'Limón', 'limon.png', 'limon.mp3', 5),
+(70, 11, 'Mi', 'Mimo', 'mimo.png', 'mimo.mp3', 1),
+(71, 11, 'Ni', 'Nido', 'nido.png', 'nido.mp3', 2),
+(72, 11, 'Pi', 'Pies', 'pies.png', 'pies.mp3', 3),
+(73, 11, 'Qui', 'Quiosco', 'quiosco.png', 'quiosco.mp3', 4),
+(74, 11, 'Ri', 'Risa', 'risa.png', 'risa.mp3', 5),
+(75, 12, 'Si', 'Sierra', 'sierra.png', 'sierra.mp3', 1),
+(76, 12, 'Ti', 'Tierra', 'tierra.png', 'tierra.mp3', 2),
+(77, 12, 'Vi', 'Violín', 'violin.png', 'violin.mp3', 3),
+(78, 12, 'Xi', 'Xilófono', 'xilofono.png', 'xilofono.mp3', 4),
+(79, 12, 'Zí', 'Zíper', 'ziper.png', 'ziper.mp3', 5),
+(80, 13, 'Bo', 'Boca', 'boca.png', 'boca.mp3', 1),
+(81, 13, 'Co', 'Colores ', 'colores.png', 'colores.mp3', 2),
+(82, 13, 'Cho', 'Chocolate', 'chocolate.png', 'Chocolate.mp3', 3),
+(83, 13, 'Do', 'Dominó ', 'domino.png ', 'dommino.mp3 ', 4),
+(84, 13, 'Fo', 'Foca', 'foca.png', 'foca.mp3', 5),
+(85, 14, 'Go', 'Gorro', 'gorro.png', 'gorro.mp3', 1),
+(86, 14, 'Ho', 'Hoja', 'hoja.png', 'hoja.mp3', 2),
+(87, 14, 'Jo', 'Joyas', ' joyas.png', 'joyas.mp3', 3),
+(88, 14, 'Ko', 'Koala', 'koala.png', 'koala.mp3', 4),
+(89, 14, 'Lo', 'Loro', 'loro.png', 'loro.mp3', 5),
+(90, 15, 'Mo', 'Mono', 'mono.png', 'mono.mp3', 1),
+(91, 15, 'No', 'Notas', 'notas.png', 'notas.mp3', 2),
+(92, 15, 'O', 'Oso', 'oso.png', 'oso.mp3', 3),
+(93, 15, 'Po', 'Pozo', 'pozo.png', 'pozo.mp3', 4),
+(94, 15, 'Ro', 'Rosado', 'rosado.png', 'rosado.mp3', 5),
+(95, 16, 'So', 'Sopa', 'sopa.png', 'sopa.mp3', 1),
+(96, 16, 'To', 'Topo', 'topo.png', 'topo.mp3', 2),
+(97, 16, 'Vol', 'Volcán', 'volcan.png', 'volcan.mp3', 3),
+(98, 16, 'Yo', 'Yoyo', 'yoyo.png', 'yoyo.mp3', 4),
+(99, 16, 'Zo', 'Zorro', 'zorro.png', 'zorro.mp3', 5),
+(100, 17, 'Bú', 'Búho', 'buho.png', '.mp3', 1),
+(101, 17, 'Cuer', 'Cuerda', 'cuerda.png', 'cuerda.mp3', 2),
+(102, 17, 'Chu', 'Churro', 'churro.png', 'churro.mp3', 3),
+(103, 17, 'Dul', 'Dulces', 'dulces.png', 'dulces.mp3', 4),
+(104, 17, 'Fue', 'Fuego', 'fuego.png', 'fuego.mp3', 5),
+(105, 17, 'Guan', 'Guantes', 'guantes.png', 'guantes.mp3', 1),
+(106, 18, 'Hue', 'Hueso', 'hueso.png', 'hueso.mp3', 2),
+(107, 18, 'Ju', 'Jugo', 'jugo.png', 'jugo.mp3', 3),
+(108, 18, 'Kung', 'Kung fu', 'kunfu.png', 'kunfu.mp3', 4),
+(109, 18, 'Lu', 'Lupa', 'lupa.png', 'lupa.mp3', 5),
+(110, 19, 'Llu', 'Lluvia', 'lluvia.png', 'lluvia.mp3', 1),
+(111, 19, 'Mu', 'Muñeca', 'muneca.png', 'muneca.mp3', 2),
+(112, 19, 'Nu', 'Nudo', 'nudo.png', 'nudo.mp3', 3),
+(113, 19, 'Puer', 'Puerta', 'puerta.png', 'puerta.mp3', 4),
+(114, 19, 'Ru', 'Rulos', 'rulos.png', 'rulos.mp3', 5),
+(115, 20, 'Sue', 'Sueño', 'sueno.png', 'sueno.mp3', 1),
+(116, 20, 'Tu', 'Tucán', 'tucan.png', 'tucan.mp3', 2),
+(117, 20, 'Vuel', 'Vuelta', 'vuelta.png', 'vuelta.mp3', 3),
+(118, 20, 'Yu', 'yuca', 'yuca.png', 'yuca.mp3', 4),
+(119, 20, 'Zur', 'Zurdo', 'zurdo.png', 'zurdo.mp3', 5),
+(120, 8, 'Ye', 'Yema', 'yema.png', 'yema.mp3', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `leo_palabras_completadas`
+--
+
+CREATE TABLE `leo_palabras_completadas` (
+  `completadoID` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `palabraID` int(11) NOT NULL,
+  `fecha_completada` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -359,24 +519,24 @@ INSERT INTO `paginas_libro` (`pagina_id`, `libro_id`, `numero_pagina`, `texto_pa
 (26, 16, 2, 'El camino atravesaba ríos, puentes y senderos llenos de árboles.\r\nPero por estar tan ocupados discutiendo, varias veces caminaron en la dirección equivocada y hasta estuvieron a punto de perder el mapa. Al darse cuenta de que así no avanzarían, decidieron turnarse para llevarlo y trabajar como un verdadero equipo.'),
 (27, 16, 3, 'Después de una larga caminata, el mapa los condujo hasta la cima de una enorme montaña que sobresalía entre las nubes.\r\n\r\nNo había cofres, ni oro, ni dulces. Solo un paisaje increíble, el canto de los pájaros, la brisa fresca que soplaba y un cielo tan brillante que parecía pintado.'),
 (28, 16, 4, 'Los tres amigos se sentaron en silencio para contemplar aquel hermoso lugar.\r\nEntonces comprendieron que el viaje había sido el verdadero tesoro: las risas, los desafíos y el tiempo que compartieron juntos como amigos.\r\n\r\nMientras bajaban de la montaña, Capy sonrió y dijo que, la próxima vez, podían buscar un tesoro... pero uno con postre.'),
-(29, 14, 1, 'Mateo nunca salía de casa sin Nova, su inseparable perrito de pelaje blanco y un pequeño sombrero de mago.\r\nTodos pensaban que era un simple accesorio divertido, pero Nova jamás permitía que nadie lo tocara.\r\nDebajo de ese sombrero escondía un diminuto pero poderoso secreto.'),
-(30, 14, 2, 'Una mañana, la escuela organizó una excursión al bosque.\r\nMientras exploraban un sendero, un fuerte viento hizo que el mapa del grupo saliera volando hasta quedar atrapado en la copa de un árbol muy alto.\r\n\r\nSin el mapa, nadie sabía cuál era el camino de regreso.'),
-(31, 14, 3, 'Los niños intentaron alcanzarlo con ramas y piedras, pero fue imposible.\r\nMateo miró hacia arriba y suspiró. Con una pequeña sonrisa dijo que deseaba que algo o alguien los ayudara a salir.\r\n\r\nNova levantó las orejas, se alejó unos pasos y su sombrero comenzó a flotar.'),
-(32, 14, 4, 'En ese instante, una pequeña estrella salió volando del sombrero de Nova. \r\nBrilló más fuerte y desapareció, luego, una suave brisa comenzó a mover las ramas. Poco a poco, el mapa se desprendió y descendió flotando hasta caer justo en las manos de Mateo.\r\n\r\nNadie notó lo que había ocurrido... excepto él.'),
-(33, 14, 5, 'Esa noche, mientras Nova dormía profundamente, Mateo levantó con cuidado el borde del sombrero, aunque no encontró nada extraño, él notó que había algo diferente en el sombrero de Nova.\r\n\r\nAhí comprendió que fue Nova quien lo ayudó con su magia...'),
-(34, 14, 6, 'Desde entonces, Mateo siguió llevando a Nova a todas partes. Nunca volvió a pedir un deseo por cosas grandes ni imposibles.\r\n\r\nSabía que, cuando un deseo nacía para ayudar a alguien de verdad, una pequeña estrella escondida bajo un sombrero de mago siempre encontraba la forma de iluminar el camino.'),
-(35, 17, 1, 'Azul era un pequeño pájaro que vivía en el árbol más alto del bosque. Cada mañana observaba el horizonte y se preguntaba qué habría más allá de las montañas.\r\nAunque soñaba con descubrir nuevos lugares, también sentía un pequeño miedo de alejarse por primera vez de su hogar.'),
-(36, 17, 2, 'Una mañana reunió todo su valor y levantó el vuelo.\r\nAtravesó un valle cubierto de flores de todos los colores, donde miles de mariposas pintaban el aire con sus alas.\r\nEl viento olía a miel y las abejas parecían cantar mientras viajaban de flor en flor.'),
-(37, 17, 3, 'Más adelante encontró una enorme cascada que caía entre montañas cubiertas de niebla.\r\nEl agua formaba un arcoíris tan brillante que parecía un puente hacia las nubes. Azul cruzó por encima de él y, por un momento, sintió que podía tocar el cielo con las puntas de sus alas.'),
-(38, 17, 4, 'Al caer la tarde llegó a un bosque donde los árboles tenían hojas doradas que brillaban con la luz del sol. Entre las ramas vivían aves de muchos colores que compartían historias de lugares lejanos.\r\nAzul comprendió que cada viajero llevaba recuerdos diferentes, y que todos tenían algo valioso para contar.'),
-(39, 17, 5, 'Cuando llegó la noche, descansó sobre una colina desde donde podía ver un cielo lleno de estrellas. Miró hacia el bosque donde había nacido y descubrió que, aunque estaba muy lejos, siempre lo llevaría en su corazón. \r\nEntonces entendió que viajar no significa olvidar el hogar, sino regresar con nuevas historias que contar.'),
-(40, 17, 6, 'Al volver, los pequeños pájaros se reunieron para escuchar sus aventuras. Azul les habló de los campos de flores, de la cascada entre las montañas y del bosque dorado donde hizo nuevos amigos. Mientras todos imaginaban aquellos lugares, una suave brisa despeinó sus plumas.\r\nAzul sonrió al cielo, porque sabía que aún quedaban muchos rincones maravillosos esperando ser descubiertos.'),
-(41, 18, 1, 'Una mañana, Leo despertó con una gran sonrisa.\r\nCapy y Finx ya estaban preparando una sorpresa muy especial.\r\nColgaron banderines entre los árboles, inflaron globos de colores y acomodaron una mesa llena de frutas, galletas y jugo. Parecía que iban a celebrar el cumpleaños de alguien.'),
-(42, 18, 2, 'Pero no era un cumpleaños.\r\nEra una fiesta para recordar todas las aventuras que habían vivido juntos. Hablaron del valiente Tito, del pequeño Dino, de Trixi, del mapache, de Nova y del pájaro Azul.\r\nCada historia les sacó una sonrisa y les recordó cuánto se habían divertido.'),
-(43, 18, 3, 'Entonces Leo tuvo una idea.\r\nBuscaron una gran caja de madera y comenzaron a guardar pequeños recuerdos de cada aventura: una pluma azul, una estrella brillante, una hoja del bosque, un mapa, una concha y una pequeña piedra.\r\nAsí, cada recuerdo tendría un lugar especial.'),
-(44, 18, 4, 'Cuando terminaron, escribieron una nota...\r\n\r\n\"Gracias por acompañarnos en cada aventura. Esperamos que hayas disfrutado este viaje tanto como nosotros.\"\r\n\r\nLos tres sonrieron con alegría y se abrazaron.'),
-(45, 18, 5, 'Era tiempo de celebrar.\r\nLos tres comenzaron a correr por el bosque, jugaron a las escondidas, hicieron una carrera hasta el río y terminaron riendo tan fuerte que hasta el Sol, la Luna y las nubes parecían querer unirse a la diversión.\r\nTodos estaban tan contentos...\r\n'),
-(46, 18, 6, 'Cuando el sol comenzó a esconderse, Los tres amigos se reunieron una vez más y, con una gran sonrisa, levantaron la mano para despedirse.\r\n\r\n—¡Hasta la próxima aventura, querido explorador!\r\n\r\nDespués siguieron riendo y jugando juntos, porque sabían que las mejores historias nunca terminan... solo esperan a que alguien vuelva a abrir un libro.');
+(29, 14, 1, 'Mateo tenía un perrito llamado Nova, un cachorro alegre que siempre llevaba un pequeño sombrero de mago. \r\nTodos pensaban que solo era un accesorio curioso, pero Nova jamás dejaba que alguien se lo quitara. \r\n\r\nDebajo del sombrero escondía una diminuta estrella que brillaba con una luz muy especial. Nova la cuidaba con mucho cariño, esperando el momento perfecto para usar su magia.'),
+(30, 14, 2, 'Un sábado, Mateo y su familia fueron a pasar el día a un gran parque natural. \r\nHabía senderos, árboles gigantes y un puente de madera que cruzaba un pequeño río. \r\nMientras caminaban, escucharon a una niña que había perdido su cometa entre las ramas del árbol más alto del parque. Muchas personas intentaron ayudar, pero el viento la había dejado atrapada en un lugar imposible de alcanzar. \r\n\r\nMateo deseó en silencio que alguien pudiera devolverle su cometa.'),
+(31, 14, 3, 'Nova observó a la niña, levantó sus orejas y se alejó sin hacer ruido. \r\nMiró el cielo, y la pequeña estrella comenzó a brillar con más fuerza que nunca. \r\nUna luz dorada salió del sombrero y subió lentamente entre las ramas, como si el viento la guiara. \r\n\r\nDe pronto, la cometa empezó a soltarse muy despacio hasta bajar flotando frente a la niña. Todos pensaron que había sido una ráfaga de viento... excepto Mateo.'),
+(32, 14, 4, 'La niña abrazó su cometa con una enorme sonrisa y dio las gracias a todos los que habían intentado ayudarla. \r\nMateo miró a Nova y notó que la estrella brillaba mucho menos que antes, como si hubiera entregado una parte de su luz.\r\n\r\nSin decir una sola palabra, Nova movió la cola y siguió caminando como si nada hubiera ocurrido.\r\nMateo comprendió que su perrito había guardado aquel secreto durante mucho tiempo.'),
+(33, 14, 5, 'Desde ese día, Mateo comenzó a fijarse en pequeños detalles que antes pasaban desapercibidos. \r\n\r\nCada vez que alguien necesitaba ayuda de verdad, Nova levantaba la vista hacia el cielo y su sombrero brillaba por un instante. \r\n\r\nNunca hacía magia para impresionar a los demás ni para conseguir cosas materiales. \r\nSu estrella solo respondía cuando un deseo sincero buscaba hacer feliz a otra persona.'),
+(34, 14, 6, 'Aquella noche, antes de dormir, Mateo acarició a Nova y acomodó con cuidado su pequeño sombrero. \r\n\r\nMiró por la ventana y descubrió una estrella brillando con más fuerza que todas las demás. \r\n\r\nSonrió, porque ahora conocía el secreto de su mejor amigo. \r\n\r\nMientras Nova dormía profundamente, la diminuta estrella volvió a esconderse bajo el sombrero, lista para iluminar el siguiente deseo que naciera de un corazón bondadoso.'),
+(35, 17, 1, 'Azul era un pequeño pájaro que vivía en un viejo roble, rodeado por un bosque lleno de vida. Desde la rama más alta observaba montañas, ríos brillantes y nubes que viajaban lentamente por el cielo. \r\nCada amanecer imaginaba qué secretos esconderían aquellos lugares escondidos. \r\nAunque sentía miedo de irse de su hogar, la curiosidad era aún más grande. Una mañana respiró profundo, extendió sus alas y decidió que había llegado el momento de descubrir el mundo.'),
+(36, 17, 2, 'Su primer destino fue un inmenso valle cubierto por flores de todos los colores.\r\n\r\nEl viento llevaba un dulce aroma que hacía bailar los pétalos sobre la hierba, mientras mariposas y abejas revoloteaban entre las plantas como si celebraran su llegada. \r\n\r\nAzul voló despacio para contemplar cada rincón y descubrió que, desde el aire, el valle parecía una enorme pintura llena de colores. \r\nNunca imaginó que un lugar pudiera ser tan hermoso.'),
+(37, 17, 3, 'Más adelante encontró una gran cascada que caía desde lo alto de una montaña.\r\n\r\nEl agua golpeaba las rocas formando miles de pequeñas gotas que brillaban como cristales bajo la luz del sol. \r\nFrente a la cascada apareció un enorme arcoíris que parecía unir la tierra con el cielo. \r\n\r\nAzul lo cruzó lentamente y sintió que volaba entre las nubes, mientras una fresca brisa acariciaba sus plumas.'),
+(38, 17, 4, 'Al continuar su viaje llegó a un lago tan tranquilo que reflejaba el cielo como si fuera un gigantesco espejo. \r\n\r\nDesde allí observó peces de colores nadando entre las plantas acuáticas y enormes nenúfares donde descansaban pequeñas ranas. \r\n\r\nCuando cayó la noche, las estrellas comenzaron a iluminar el agua y el paisaje se volvió tan brillante que parecía un sueño. \r\nAzul permaneció en silencio, disfrutando uno de los momentos más hermosos que había visto.'),
+(39, 17, 5, 'Antes de regresar, sobrevoló un bosque donde los árboles tenían hojas doradas que brillaban con la luz del amanecer. \r\nAllí conoció aves de muchos lugares, cada una con una historia diferente para contar. \r\n\r\nEscuchó relatos sobre océanos inmensos, montañas nevadas y desiertos donde el viento dibujaba formas en la arena. \r\nEntonces comprendió que cada viaje no solo permitía descubrir nuevos paisajes, sino también hacer amigos y aprender algo nuevo en cada encuentro.'),
+(40, 17, 6, 'Cuando Azul volvió a su hogar, todos se reunieron para escuchar sus aventuras. \r\nMientras contaba lo que había visto, los pequeños pájaros imaginaban los campos de flores, la gran cascada, el lago de las estrellas y el bosque dorado. \r\n\r\nAzul entendió que siempre existirían nuevos lugares por descubrir. \r\nCerró sus alas por un momento y pensó que la aventura más hermosa no era llegar más lejos, sino tener el valor de dar el primer vuelo.'),
+(41, 18, 1, 'El bosque amaneció lleno de alegría.\r\nLeo, Capy y Finx preparaban una celebración muy especial. \r\nColgaron banderines entre los árboles, acomodaron una mesa con frutas y galletas y decoraron el camino con flores de muchos colores. \r\nNo era una fiesta cualquiera; querían recordar todas las aventuras que habían vivido junto a un gran amigo.'),
+(42, 18, 2, 'Cuando por fin terminaron los preparativos, los tres se sentaron bajo un enorme árbol para descansar un momento. \r\n\r\nRecordaron las aventuras que los hicieron reír, los misterios que resolvieron, los lugares sorprendentes que descubrieron y los nuevos amigos que conocieron durante el camino. \r\n\r\nCada historia les había enseñado algo diferente y cada página guardaba un recuerdo que siempre llevarían en el corazón. \r\n\r\nSin darse cuenta, la mañana pasó entre risas e historias.'),
+(43, 18, 3, 'Leo tuvo una idea para que ninguno de esos momentos se olvidara. \r\n\r\nBuscaron una vieja caja de madera y comenzaron a llenarla con pequeños recuerdos de sus aventuras: una pluma azul, una estrella brillante, un mapa doblado, una hoja del bosque, una concha y una pequeña semilla. \r\n\r\nCada objeto parecía sencillo, pero escondía una historia llena de imaginación, valentía, amistad y trabajo en equipo. \r\n\r\nAquella caja se convirtió en su tesoro más valioso.'),
+(44, 18, 4, 'Antes de cerrar la caja, Finx tomó una hoja de papel y escribió un mensaje. Leo y Capy al leerlo sonrieron al mismo tiempo. El mensaje decía:\r\n\r\n\"Gracias por jugar, aprender, imaginar y crecer junto a nosotros. Cada aventura fue más divertida porque tú estuviste aquí. \r\nNunca dejes de hacer preguntas, de soñar en grande y de creer que cualquier aventura puede comenzar al abrir un libro.\"\r\n\r\nCon mucho cariño, guardaron la nota con los otros recuerdos.'),
+(45, 18, 5, 'Después comenzó la mejor parte de la celebración. \r\n\r\nCorrieron por el bosque, jugaron a las escondidas, inventaron nuevos juegos y organizaron una divertida carrera hasta el río. \r\n\r\nEntre tantas risas, hasta las mariposas parecían bailar y los pájaros acompañaban la fiesta con sus cantos. \r\n\r\nEl bosque entero se llenó de alegría, como si también quisiera celebrar todas las aventuras que habían compartido durante aquel maravilloso viaje.'),
+(46, 18, 6, 'Cuando el sol comenzó a esconderse, Leo, Capy y Finx caminaron juntos hasta el sendero del bosque. Con una enorme sonrisa dijeron:\r\n\r\n—¡Hasta la próxima aventura, querido explorador!\r\n\r\nCapy quiso repartir las últimas galletas, pero al abrir su mochila solo encontró unas pocas migajas... porque ya se las había comido.\r\n\r\nLos tres se rieron y siguieron jugando entre los árboles. Ellos ya sabían que cada vez que se abre un libro, una nueva aventura comienza.');
 
 -- --------------------------------------------------------
 
@@ -462,7 +622,10 @@ INSERT INTO `progreso` (`progresoID`, `userID`, `puntos`, `racha`, `nivel_actual
 (4, 21, 0, 0, 1, 1, 0, '2026-07-04 06:13:36', 'leo'),
 (5, 28, 0, 0, 1, 1, 0, '2026-07-04 06:33:08', 'leo'),
 (6, 17, 0, 0, 1, 1, 0, '2026-07-05 22:32:17', 'leo'),
-(7, 15, 0, 0, 1, 1, 0, '2026-07-06 15:06:47', 'leo');
+(7, 15, 0, 0, 1, 1, 0, '2026-07-06 15:06:47', 'leo'),
+(8, 30, 0, 0, 1, 1, 0, '2026-07-15 22:19:52', 'leo'),
+(9, 31, 0, 0, 1, 1, 0, '2026-07-18 15:20:04', 'leo'),
+(10, 16, 0, 0, 1, 1, 0, '2026-07-23 05:16:11', 'leo');
 
 -- --------------------------------------------------------
 
@@ -474,8 +637,33 @@ CREATE TABLE `progreso_libros` (
   `progreso_libro_id` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `libro_id` int(11) NOT NULL,
+  `tiempo_segundos` int(11) NOT NULL DEFAULT 0,
   `fecha_leido` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `progreso_libros`
+--
+
+INSERT INTO `progreso_libros` (`progreso_libro_id`, `userID`, `libro_id`, `tiempo_segundos`, `fecha_leido`) VALUES
+(1, 17, 3, 28, '2026-07-23 08:38:35'),
+(2, 17, 8, 25, '2026-07-23 08:45:40'),
+(3, 17, 9, 21, '2026-07-23 08:46:38'),
+(4, 16, 3, 1, '2026-07-23 09:00:34'),
+(5, 16, 9, 2, '2026-07-23 09:00:48'),
+(6, 16, 8, 2, '2026-07-23 09:01:06'),
+(7, 16, 5, 1, '2026-07-23 10:00:55'),
+(8, 16, 11, 3, '2026-07-23 10:01:07'),
+(9, 16, 13, 2, '2026-07-23 10:01:21'),
+(10, 16, 6, 3, '2026-07-23 10:01:44'),
+(11, 16, 7, 3, '2026-07-23 10:01:59'),
+(12, 16, 10, 4, '2026-07-23 10:02:15'),
+(13, 16, 12, 5, '2026-07-23 10:02:31'),
+(14, 16, 15, 6, '2026-07-23 10:02:52'),
+(15, 16, 16, 9, '2026-07-23 10:03:34'),
+(16, 16, 14, 7, '2026-07-23 10:03:52'),
+(17, 16, 17, 12, '2026-07-23 10:04:18'),
+(18, 16, 18, 7, '2026-07-23 10:04:39');
 
 -- --------------------------------------------------------
 
@@ -543,7 +731,10 @@ CREATE TABLE `suscripciones` (
 
 INSERT INTO `suscripciones` (`suscripcionID`, `userID`, `paqueteID`, `estado`, `fecha_inicio`, `fecha_fin`) VALUES
 (1, 20, 2, 'activa', '2026-07-05 21:45:14', NULL),
-(2, 15, 1, 'activa', '2026-07-07 05:22:29', NULL);
+(2, 15, 1, 'activa', '2026-07-07 05:22:29', NULL),
+(3, 30, 3, 'activa', '2026-07-20 18:38:53', NULL),
+(4, 31, 3, 'activa', '2026-07-18 15:20:24', NULL),
+(5, 16, 1, 'activa', '2026-07-23 05:17:21', NULL);
 
 -- --------------------------------------------------------
 
@@ -554,6 +745,7 @@ INSERT INTO `suscripciones` (`suscripcionID`, `userID`, `paqueteID`, `estado`, `
 CREATE TABLE `usuarios` (
   `userID` int(11) NOT NULL,
   `nombre_nino` varchar(100) NOT NULL,
+  `edad_nino` int(11) NOT NULL DEFAULT 0,
   `nombre_papa` varchar(100) NOT NULL,
   `correo` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -569,16 +761,19 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`userID`, `nombre_nino`, `nombre_papa`, `correo`, `password`, `foto_nino`, `foto_padre`, `rol`, `fecha_registro`, `token_recuperacion`, `token_expiracion`) VALUES
-(15, 'Admin', 'Administrador', 'leo&friends@admin.com', '$2y$10$vCgkSLr2/qT0Vf3C6rvc4.NGisiZF/DUH7wPT15XY.gbHvV6VKQlO', NULL, NULL, 'admin', '2026-06-11 02:02:21', NULL, NULL),
-(16, '', 'Administrador', 'admin1@admin.com', '$2y$10$vCgkSLr2/qT0Vf3C6rvc4.NGisiZF/DUH7wPT15XY.gbHvV6VKQlO', NULL, NULL, 'admin', '2026-06-11 02:05:59', NULL, NULL),
-(17, 'Lucy', 'Kenia Beltrán', 'kenia26@gmail.com', '$2y$10$aVPCeX.SIs0DTtlSCYWfF.Vy1pwqOZjJvZX/UqL6hFRI//kXVKSCm', NULL, 'mama2.jpg', 'usuario', '2026-06-14 04:10:33', NULL, NULL),
-(18, 'Pedrito', 'Susana Gonzales', 'susanagonzales@gmail.com', '$2y$10$1LoqGMLe5JkGqTyBmX0xsOBewhho4sFEoiLM0iECJn13rYJ69BvWy', 'nino1.jpg', 'mama1.jpg', 'usuario', '2026-06-17 18:21:42', NULL, NULL),
-(19, 'Valeria', 'Carlos Ponce', 'carsloponcesoriano@gmail.com', '$2y$10$QO037MeeXdsL.KgnsSEvGOjt7kBBp.WAY7kmjllHWV7HrNsho0QJG', NULL, 'papa1.jpg', 'usuario', '2026-06-19 20:10:32', NULL, NULL),
-(20, 'Vale', 'Lolo', 'lolorivas2341@gmail.com', '$2y$10$8v/11mhyPZkoCbBoJ8k72.EA1K/5ZAaDNvXoehcfhmJkytDUhUeWi', 'av_6a481b00d9ed02.62389939.jpg', 'av_6a481b00da7d79.36941822.jpg', 'usuario', '2026-07-03 20:24:14', NULL, NULL),
-(21, 'Armando', 'Ana', 'anitalopez@gmail.com', '$2y$10$ZNhJFEFQpFUTup3nxR8g3eVd0nIkATO34In73amupoHkPR15m6D1m', NULL, NULL, 'usuario', '2026-07-04 05:59:27', NULL, NULL),
-(26, 'María', 'Roberto', 'rober123@gmail.coom', '$2y$10$zrcuiOjPX5CoVxFHLuuqHeaplDGLvsUxLlSSxkrbK2DE69pATUg.W', NULL, NULL, 'usuario', '2026-07-04 06:15:08', NULL, NULL),
-(28, 'Brenda', 'Gertrudis', 'gomez333@gmail.coom', '$2y$10$P22vjvigxDolQvy2PoAvMOlxLbOK1urNAo48bw0ll/KdSSDPt8/xe', NULL, NULL, 'usuario', '2026-07-04 06:18:14', NULL, NULL);
+INSERT INTO `usuarios` (`userID`, `nombre_nino`, `edad_nino`, `nombre_papa`, `correo`, `password`, `foto_nino`, `foto_padre`, `rol`, `fecha_registro`, `token_recuperacion`, `token_expiracion`) VALUES
+(15, 'Admin', 0, 'Administrador', 'leo&friends@admin.com', '$2y$10$vCgkSLr2/qT0Vf3C6rvc4.NGisiZF/DUH7wPT15XY.gbHvV6VKQlO', NULL, NULL, 'admin', '2026-06-11 02:02:21', NULL, NULL),
+(16, 'Leo & Friends', 0, 'Administrador', 'admin1@admin.com', '$2y$10$vCgkSLr2/qT0Vf3C6rvc4.NGisiZF/DUH7wPT15XY.gbHvV6VKQlO', 'av_6a61a5c6bb8037.01268402.jpg', NULL, 'admin', '2026-06-11 02:05:59', NULL, NULL),
+(17, 'Lucy', 0, 'Kenia Beltrán', 'kenia26@gmail.com', '$2y$10$aVPCeX.SIs0DTtlSCYWfF.Vy1pwqOZjJvZX/UqL6hFRI//kXVKSCm', NULL, 'mama2.jpg', 'usuario', '2026-06-14 04:10:33', NULL, NULL),
+(18, 'Pedrito', 0, 'Susana Gonzales', 'susanagonzales@gmail.com', '$2y$10$1LoqGMLe5JkGqTyBmX0xsOBewhho4sFEoiLM0iECJn13rYJ69BvWy', 'nino1.jpg', 'mama1.jpg', 'usuario', '2026-06-17 18:21:42', NULL, NULL),
+(19, 'Valeria', 0, 'Carlos Ponce', 'carsloponcesoriano@gmail.com', '$2y$10$QO037MeeXdsL.KgnsSEvGOjt7kBBp.WAY7kmjllHWV7HrNsho0QJG', NULL, 'papa1.jpg', 'usuario', '2026-06-19 20:10:32', NULL, NULL),
+(20, 'Vale', 0, 'Lolo', 'lolorivas2341@gmail.com', '$2y$10$8v/11mhyPZkoCbBoJ8k72.EA1K/5ZAaDNvXoehcfhmJkytDUhUeWi', 'av_6a481b00d9ed02.62389939.jpg', 'av_6a481b00da7d79.36941822.jpg', 'usuario', '2026-07-03 20:24:14', NULL, NULL),
+(21, 'Armando', 0, 'Ana', 'anitalopez@gmail.com', '$2y$10$ZNhJFEFQpFUTup3nxR8g3eVd0nIkATO34In73amupoHkPR15m6D1m', NULL, NULL, 'usuario', '2026-07-04 05:59:27', NULL, NULL),
+(26, 'María', 0, 'Roberto', 'rober123@gmail.coom', '$2y$10$zrcuiOjPX5CoVxFHLuuqHeaplDGLvsUxLlSSxkrbK2DE69pATUg.W', NULL, NULL, 'usuario', '2026-07-04 06:15:08', NULL, NULL),
+(28, 'Brenda', 0, 'Gertrudis', 'gomez333@gmail.coom', '$2y$10$P22vjvigxDolQvy2PoAvMOlxLbOK1urNAo48bw0ll/KdSSDPt8/xe', NULL, NULL, 'usuario', '2026-07-04 06:18:14', NULL, NULL),
+(29, 'Byronsito', 0, 'Carlos', 'byronPNG@gmail.com', '$2y$10$FOstG8YtXEkzlD8FEDvyUuz15qYPgei.VbKaF.KI6S6VQQp9eJtu.', NULL, NULL, 'usuario', '2026-07-09 22:39:29', NULL, NULL),
+(30, 'Danielito', 0, 'Cristian', 'danielito@gmail.com', '$2y$10$YiZPEQSIvSoT.o7iB8MzVuGbVbZzXC6u69DiqBKwKAHj5EUo0A3I2', NULL, NULL, 'usuario', '2026-07-09 22:40:22', NULL, NULL),
+(31, 'Andrés', 7, 'Pablito', 'hola@hotmail', '$2y$10$GYS4juhDiZIFUWzFSvHOzuU8u8.V0S1HZvFNeAOxyHsNElbSzjfga', 'av_6a5b99d74514d9.07486590.png', 'av_6a5b9a5e1506e0.92122427.jpg', 'usuario', '2026-07-18 15:09:50', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -627,7 +822,22 @@ INSERT INTO `usuario_respuestas` (`usuario_id`, `opcion_id`) VALUES
 (28, 22),
 (28, 31),
 (28, 41),
-(28, 50);
+(28, 50),
+(29, 10),
+(29, 20),
+(29, 30),
+(29, 40),
+(29, 50),
+(30, 11),
+(30, 21),
+(30, 31),
+(30, 41),
+(30, 51),
+(31, 11),
+(31, 21),
+(31, 31),
+(31, 42),
+(31, 52);
 
 --
 -- Índices para tablas volcadas
@@ -837,7 +1047,7 @@ ALTER TABLE `leo_estadisticas`
 -- AUTO_INCREMENT de la tabla `leo_lecciones`
 --
 ALTER TABLE `leo_lecciones`
-  MODIFY `leccionID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `leccionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `leo_niveles`
@@ -849,13 +1059,13 @@ ALTER TABLE `leo_niveles`
 -- AUTO_INCREMENT de la tabla `leo_niveles_desbloqueo`
 --
 ALTER TABLE `leo_niveles_desbloqueo`
-  MODIFY `desbloqueoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `desbloqueoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `leo_palabras`
 --
 ALTER TABLE `leo_palabras`
-  MODIFY `palabraID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `palabraID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT de la tabla `leo_progreso`
@@ -915,13 +1125,13 @@ ALTER TABLE `paquete_beneficios`
 -- AUTO_INCREMENT de la tabla `progreso`
 --
 ALTER TABLE `progreso`
-  MODIFY `progresoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `progresoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `progreso_libros`
 --
 ALTER TABLE `progreso_libros`
-  MODIFY `progreso_libro_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `progreso_libro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `resenas`
@@ -939,13 +1149,13 @@ ALTER TABLE `silabas`
 -- AUTO_INCREMENT de la tabla `suscripciones`
 --
 ALTER TABLE `suscripciones`
-  MODIFY `suscripcionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `suscripcionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario_logros`
