@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 12-09-2026 a las 22:35:56
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Sep 18, 2026 at 03:16 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `leo_and_friends`
+-- Database: `leo_and_friends`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `capy_actividades`
+-- Table structure for table `capy_actividades`
 --
 
 CREATE TABLE `capy_actividades` (
@@ -43,7 +43,7 @@ CREATE TABLE `capy_actividades` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `capy_actividades`
+-- Dumping data for table `capy_actividades`
 --
 
 INSERT INTO `capy_actividades` (`id`, `leccion_id`, `numero_actividad`, `tipo`, `titulo`, `instruccion`, `contenido`, `explicacion`, `audio_url`, `imagen`, `puntos`, `activa`) VALUES
@@ -176,7 +176,7 @@ INSERT INTO `capy_actividades` (`id`, `leccion_id`, `numero_actividad`, `tipo`, 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `capy_lecciones`
+-- Table structure for table `capy_lecciones`
 --
 
 CREATE TABLE `capy_lecciones` (
@@ -191,7 +191,7 @@ CREATE TABLE `capy_lecciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `capy_lecciones`
+-- Dumping data for table `capy_lecciones`
 --
 
 INSERT INTO `capy_lecciones` (`id`, `nivel`, `numero_leccion`, `titulo`, `descripcion`, `objetivo`, `icono`, `activa`) VALUES
@@ -224,7 +224,7 @@ INSERT INTO `capy_lecciones` (`id`, `nivel`, `numero_leccion`, `titulo`, `descri
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `capy_niveles`
+-- Table structure for table `capy_niveles`
 --
 
 CREATE TABLE `capy_niveles` (
@@ -236,7 +236,7 @@ CREATE TABLE `capy_niveles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `capy_niveles`
+-- Dumping data for table `capy_niveles`
 --
 
 INSERT INTO `capy_niveles` (`id`, `numero`, `titulo`, `descripcion`, `activa`) VALUES
@@ -249,7 +249,7 @@ INSERT INTO `capy_niveles` (`id`, `numero`, `titulo`, `descripcion`, `activa`) V
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `capy_opciones`
+-- Table structure for table `capy_opciones`
 --
 
 CREATE TABLE `capy_opciones` (
@@ -265,7 +265,7 @@ CREATE TABLE `capy_opciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `capy_opciones`
+-- Dumping data for table `capy_opciones`
 --
 
 INSERT INTO `capy_opciones` (`id`, `actividad_id`, `texto`, `imagen`, `audio_url`, `es_correcta`, `orden`, `orden_correcto`, `grupo`) VALUES
@@ -273,14 +273,14 @@ INSERT INTO `capy_opciones` (`id`, `actividad_id`, `texto`, `imagen`, `audio_url
 (2, 1, 'perro', NULL, NULL, 0, 2, NULL, 'animal'),
 (3, 1, 'escuela', NULL, NULL, 0, 3, NULL, 'lugar'),
 (4, 1, 'lápiz', NULL, NULL, 0, 4, NULL, 'objeto'),
-(414, 3, 'niña', NULL, NULL, 1, 1, NULL, 'persona'),
-(415, 3, 'perro', NULL, NULL, 1, 2, NULL, 'animal'),
-(416, 3, 'escuela', NULL, NULL, 1, 3, NULL, 'lugar'),
-(417, 3, 'lápiz', NULL, NULL, 1, 4, NULL, 'objeto'),
-(418, 3, 'maestro', NULL, NULL, 1, 5, NULL, 'persona'),
-(419, 3, 'gato', NULL, NULL, 1, 6, NULL, 'animal'),
-(420, 3, 'parque', NULL, NULL, 1, 7, NULL, 'lugar'),
-(421, 3, 'pelota', NULL, NULL, 1, 8, NULL, 'objeto'),
+(414, 3, 'niña', 'images/Capy/nina.png', NULL, 1, 1, NULL, 'persona'),
+(415, 3, 'perro', 'images/Capy/perro.png', NULL, 1, 2, NULL, 'animal'),
+(416, 3, 'escuela', 'images/Capy/escuela.png', NULL, 1, 3, NULL, 'lugar'),
+(417, 3, 'lápiz', 'images/Capy/lapiz.png', NULL, 1, 4, NULL, 'objeto'),
+(418, 3, 'maestro', 'images/Capy/maestro.png', NULL, 1, 5, NULL, 'persona'),
+(419, 3, 'gato', 'images/Capy/gato.png', NULL, 1, 6, NULL, 'animal'),
+(420, 3, 'parque', 'images/Capy/parque.png', NULL, 1, 7, NULL, 'lugar'),
+(421, 3, 'pelota', 'images/Capy/pelota.png', NULL, 1, 8, NULL, 'objeto'),
 (422, 4, 'gato', NULL, NULL, 1, 1, NULL, NULL),
 (423, 4, 'correr', NULL, NULL, 0, 2, NULL, NULL),
 (424, 4, 'bonito', NULL, NULL, 0, 3, NULL, NULL),
@@ -682,7 +682,7 @@ INSERT INTO `capy_opciones` (`id`, `actividad_id`, `texto`, `imagen`, `audio_url
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `capy_progreso`
+-- Table structure for table `capy_progreso`
 --
 
 CREATE TABLE `capy_progreso` (
@@ -698,7 +698,7 @@ CREATE TABLE `capy_progreso` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `capy_progreso`
+-- Dumping data for table `capy_progreso`
 --
 
 INSERT INTO `capy_progreso` (`id`, `userID`, `leccion_id`, `actividad_actual`, `porcentaje`, `puntos`, `completada`, `fecha_inicio`, `ultima_actualizacion`) VALUES
@@ -711,12 +711,20 @@ INSERT INTO `capy_progreso` (`id`, `userID`, `leccion_id`, `actividad_actual`, `
 (68, 15, 20, 2, 20, 10, 0, '2026-09-12 11:04:27', '2026-09-12 11:04:27'),
 (69, 15, 10, 5, 60, 40, 0, '2026-09-12 11:05:07', '2026-09-12 11:05:34'),
 (73, 15, 15, 5, 0, 0, 0, '2026-09-12 14:09:09', '2026-09-12 14:09:13'),
-(78, 15, 9, 5, 0, 0, 0, '2026-09-12 14:09:22', '2026-09-12 14:09:44');
+(78, 15, 9, 5, 0, 0, 0, '2026-09-12 14:09:22', '2026-09-12 14:09:44'),
+(101, 33, 1, 5, 100, 40, 1, '2026-09-12 18:41:48', '2026-09-18 07:00:49'),
+(104, 33, 4, 1, 0, 0, 0, '2026-09-12 19:19:15', '2026-09-12 19:19:15'),
+(105, 33, 2, 3, 20, 0, 0, '2026-09-12 19:19:24', '2026-09-16 20:21:39'),
+(108, 33, 3, 5, 0, 0, 0, '2026-09-12 19:19:55', '2026-09-12 19:20:24'),
+(113, 18, 1, 5, 80, 0, 0, '2026-09-13 11:43:38', '2026-09-13 16:33:28'),
+(120, 18, 2, 1, 0, 0, 0, '2026-09-13 16:19:07', '2026-09-13 16:19:07'),
+(121, 34, 1, 3, 40, 10, 0, '2026-09-13 16:41:04', '2026-09-15 10:17:29'),
+(122, 34, 2, 1, 0, 0, 0, '2026-09-13 16:41:38', '2026-09-13 16:41:38');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cuestionario_opciones`
+-- Table structure for table `cuestionario_opciones`
 --
 
 CREATE TABLE `cuestionario_opciones` (
@@ -726,7 +734,7 @@ CREATE TABLE `cuestionario_opciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `cuestionario_opciones`
+-- Dumping data for table `cuestionario_opciones`
 --
 
 INSERT INTO `cuestionario_opciones` (`opcion_id`, `pregunta_id`, `texto_opcion`) VALUES
@@ -753,7 +761,7 @@ INSERT INTO `cuestionario_opciones` (`opcion_id`, `pregunta_id`, `texto_opcion`)
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cuestionario_preguntas`
+-- Table structure for table `cuestionario_preguntas`
 --
 
 CREATE TABLE `cuestionario_preguntas` (
@@ -763,7 +771,7 @@ CREATE TABLE `cuestionario_preguntas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `cuestionario_preguntas`
+-- Dumping data for table `cuestionario_preguntas`
 --
 
 INSERT INTO `cuestionario_preguntas` (`pregunta_id`, `texto_pregunta`, `tipo_accion`) VALUES
@@ -776,7 +784,7 @@ INSERT INTO `cuestionario_preguntas` (`pregunta_id`, `texto_pregunta`, `tipo_acc
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `leo_estadisticas`
+-- Table structure for table `leo_estadisticas`
 --
 
 CREATE TABLE `leo_estadisticas` (
@@ -792,7 +800,7 @@ CREATE TABLE `leo_estadisticas` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `leo_lecciones`
+-- Table structure for table `leo_lecciones`
 --
 
 CREATE TABLE `leo_lecciones` (
@@ -803,7 +811,7 @@ CREATE TABLE `leo_lecciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `leo_lecciones`
+-- Dumping data for table `leo_lecciones`
 --
 
 INSERT INTO `leo_lecciones` (`leccionID`, `nivelID`, `numero`, `nombre`) VALUES
@@ -831,7 +839,7 @@ INSERT INTO `leo_lecciones` (`leccionID`, `nivelID`, `numero`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `leo_niveles`
+-- Table structure for table `leo_niveles`
 --
 
 CREATE TABLE `leo_niveles` (
@@ -842,7 +850,7 @@ CREATE TABLE `leo_niveles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `leo_niveles`
+-- Dumping data for table `leo_niveles`
 --
 
 INSERT INTO `leo_niveles` (`nivelID`, `nombre`, `vocal`, `orden`) VALUES
@@ -855,7 +863,7 @@ INSERT INTO `leo_niveles` (`nivelID`, `nombre`, `vocal`, `orden`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `leo_niveles_desbloqueo`
+-- Table structure for table `leo_niveles_desbloqueo`
 --
 
 CREATE TABLE `leo_niveles_desbloqueo` (
@@ -868,7 +876,7 @@ CREATE TABLE `leo_niveles_desbloqueo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `leo_niveles_desbloqueo`
+-- Dumping data for table `leo_niveles_desbloqueo`
 --
 
 INSERT INTO `leo_niveles_desbloqueo` (`desbloqueoID`, `userID`, `nivelID`, `porcentaje`, `desbloqueado`, `fecha_desbloqueo`) VALUES
@@ -911,12 +919,22 @@ INSERT INTO `leo_niveles_desbloqueo` (`desbloqueoID`, `userID`, `nivelID`, `porc
 (45, 32, 2, 0.00, 0, NULL),
 (46, 32, 3, 0.00, 0, NULL),
 (47, 32, 4, 0.00, 0, NULL),
-(48, 32, 5, 0.00, 0, NULL);
+(48, 32, 5, 0.00, 0, NULL),
+(49, 33, 1, 0.00, 1, NULL),
+(50, 33, 2, 0.00, 1, NULL),
+(51, 33, 3, 0.00, 0, NULL),
+(52, 33, 4, 0.00, 0, NULL),
+(53, 33, 5, 0.00, 0, NULL),
+(54, 34, 1, 0.00, 1, NULL),
+(55, 34, 2, 0.00, 0, NULL),
+(56, 34, 3, 0.00, 0, NULL),
+(57, 34, 4, 0.00, 0, NULL),
+(58, 34, 5, 0.00, 0, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `leo_palabras`
+-- Table structure for table `leo_palabras`
 --
 
 CREATE TABLE `leo_palabras` (
@@ -930,7 +948,7 @@ CREATE TABLE `leo_palabras` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `leo_palabras`
+-- Dumping data for table `leo_palabras`
 --
 
 INSERT INTO `leo_palabras` (`palabraID`, `leccionID`, `silaba`, `palabra`, `imagen`, `audio`, `orden_palabra`) VALUES
@@ -1038,7 +1056,7 @@ INSERT INTO `leo_palabras` (`palabraID`, `leccionID`, `silaba`, `palabra`, `imag
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `leo_palabras_completadas`
+-- Table structure for table `leo_palabras_completadas`
 --
 
 CREATE TABLE `leo_palabras_completadas` (
@@ -1051,7 +1069,7 @@ CREATE TABLE `leo_palabras_completadas` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `leo_progreso`
+-- Table structure for table `leo_progreso`
 --
 
 CREATE TABLE `leo_progreso` (
@@ -1066,7 +1084,7 @@ CREATE TABLE `leo_progreso` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `leo_progreso`
+-- Dumping data for table `leo_progreso`
 --
 
 INSERT INTO `leo_progreso` (`progresoID`, `userID`, `nivelID`, `leccionID`, `palabraID`, `fase`, `porcentaje`, `ultima_actualizacion`) VALUES
@@ -1074,12 +1092,37 @@ INSERT INTO `leo_progreso` (`progresoID`, `userID`, `nivelID`, `leccionID`, `pal
 (2, 32, 1, 1, 2, 3, 100.00, '2026-08-23 16:53:59'),
 (3, 32, 1, 1, 3, 3, 100.00, '2026-08-23 16:54:29'),
 (4, 32, 1, 1, 4, 3, 100.00, '2026-08-23 16:54:54'),
-(5, 32, 1, 1, 5, 3, 100.00, '2026-08-23 16:55:14');
+(5, 32, 1, 1, 5, 3, 100.00, '2026-08-23 16:55:14'),
+(13, 33, 1, 1, 1, 3, 100.00, '2026-09-13 02:23:20'),
+(14, 33, 1, 1, 2, 3, 100.00, '2026-09-13 02:23:36'),
+(15, 33, 1, 1, 3, 3, 100.00, '2026-09-13 02:23:55'),
+(16, 33, 1, 1, 4, 3, 100.00, '2026-09-13 02:24:13'),
+(17, 33, 1, 1, 5, 3, 100.00, '2026-09-13 02:24:34'),
+(18, 33, 1, 2, 6, 3, 100.00, '2026-09-13 01:33:21'),
+(19, 33, 1, 2, 7, 3, 100.00, '2026-09-13 01:33:38'),
+(20, 33, 1, 2, 8, 3, 100.00, '2026-09-13 01:34:02'),
+(21, 33, 1, 2, 9, 3, 100.00, '2026-09-13 01:34:29'),
+(22, 33, 1, 2, 10, 3, 100.00, '2026-09-13 01:34:45'),
+(23, 33, 1, 3, 11, 3, 100.00, '2026-09-13 01:35:12'),
+(24, 33, 1, 3, 12, 3, 100.00, '2026-09-13 01:35:33'),
+(25, 33, 1, 3, 13, 3, 100.00, '2026-09-13 01:35:59'),
+(26, 33, 1, 3, 14, 3, 100.00, '2026-09-13 01:36:15'),
+(27, 33, 1, 3, 15, 3, 100.00, '2026-09-13 01:36:30'),
+(28, 33, 1, 4, 16, 3, 100.00, '2026-09-13 15:33:32'),
+(29, 33, 1, 4, 17, 3, 100.00, '2026-09-13 15:33:58'),
+(30, 33, 1, 4, 18, 3, 100.00, '2026-09-13 15:34:24'),
+(31, 33, 1, 4, 19, 3, 100.00, '2026-09-13 15:34:44'),
+(32, 33, 1, 4, 20, 3, 100.00, '2026-09-13 15:35:04'),
+(33, 18, 1, 1, 1, 3, 100.00, '2026-09-13 17:42:52'),
+(34, 18, 1, 1, 2, 3, 100.00, '2026-09-13 17:44:20'),
+(35, 18, 1, 1, 3, 3, 100.00, '2026-09-13 17:44:52'),
+(36, 18, 1, 1, 4, 3, 100.00, '2026-09-13 17:45:35'),
+(37, 18, 1, 1, 5, 3, 100.00, '2026-09-13 18:00:34');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `libros`
+-- Table structure for table `libros`
 --
 
 CREATE TABLE `libros` (
@@ -1091,7 +1134,7 @@ CREATE TABLE `libros` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `libros`
+-- Dumping data for table `libros`
 --
 
 INSERT INTO `libros` (`libro_id`, `titulo`, `portada`, `tiempo_estimado`, `nivel_id`) VALUES
@@ -1114,7 +1157,7 @@ INSERT INTO `libros` (`libro_id`, `titulo`, `portada`, `tiempo_estimado`, `nivel
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `libro_atributos`
+-- Table structure for table `libro_atributos`
 --
 
 CREATE TABLE `libro_atributos` (
@@ -1125,7 +1168,7 @@ CREATE TABLE `libro_atributos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `logros`
+-- Table structure for table `logros`
 --
 
 CREATE TABLE `logros` (
@@ -1138,7 +1181,7 @@ CREATE TABLE `logros` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `misiones_diarias`
+-- Table structure for table `misiones_diarias`
 --
 
 CREATE TABLE `misiones_diarias` (
@@ -1150,7 +1193,7 @@ CREATE TABLE `misiones_diarias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `misiones_diarias`
+-- Dumping data for table `misiones_diarias`
 --
 
 INSERT INTO `misiones_diarias` (`misionID`, `titulo`, `descripcion`, `tipo`, `puntos`) VALUES
@@ -1159,7 +1202,7 @@ INSERT INTO `misiones_diarias` (`misionID`, `titulo`, `descripcion`, `tipo`, `pu
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `niveles`
+-- Table structure for table `niveles`
 --
 
 CREATE TABLE `niveles` (
@@ -1168,7 +1211,7 @@ CREATE TABLE `niveles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `niveles`
+-- Dumping data for table `niveles`
 --
 
 INSERT INTO `niveles` (`nivel_id`, `niveles`) VALUES
@@ -1181,7 +1224,7 @@ INSERT INTO `niveles` (`nivel_id`, `niveles`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `oraciones`
+-- Table structure for table `oraciones`
 --
 
 CREATE TABLE `oraciones` (
@@ -1195,7 +1238,7 @@ CREATE TABLE `oraciones` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `paginas_libro`
+-- Table structure for table `paginas_libro`
 --
 
 CREATE TABLE `paginas_libro` (
@@ -1206,7 +1249,7 @@ CREATE TABLE `paginas_libro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `paginas_libro`
+-- Dumping data for table `paginas_libro`
 --
 
 INSERT INTO `paginas_libro` (`pagina_id`, `libro_id`, `numero_pagina`, `texto_pagina`) VALUES
@@ -1256,7 +1299,7 @@ INSERT INTO `paginas_libro` (`pagina_id`, `libro_id`, `numero_pagina`, `texto_pa
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `paquetes`
+-- Table structure for table `paquetes`
 --
 
 CREATE TABLE `paquetes` (
@@ -1269,7 +1312,7 @@ CREATE TABLE `paquetes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `paquetes`
+-- Dumping data for table `paquetes`
 --
 
 INSERT INTO `paquetes` (`paqueteID`, `nombre`, `precio`, `descripcion`, `popular`, `activo`) VALUES
@@ -1280,7 +1323,7 @@ INSERT INTO `paquetes` (`paqueteID`, `nombre`, `precio`, `descripcion`, `popular
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `paquete_beneficios`
+-- Table structure for table `paquete_beneficios`
 --
 
 CREATE TABLE `paquete_beneficios` (
@@ -1291,7 +1334,7 @@ CREATE TABLE `paquete_beneficios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `paquete_beneficios`
+-- Dumping data for table `paquete_beneficios`
 --
 
 INSERT INTO `paquete_beneficios` (`beneficioID`, `paqueteID`, `descripcion`, `orden`) VALUES
@@ -1312,7 +1355,7 @@ INSERT INTO `paquete_beneficios` (`beneficioID`, `paqueteID`, `descripcion`, `or
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `progreso`
+-- Table structure for table `progreso`
 --
 
 CREATE TABLE `progreso` (
@@ -1328,11 +1371,11 @@ CREATE TABLE `progreso` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `progreso`
+-- Dumping data for table `progreso`
 --
 
 INSERT INTO `progreso` (`progresoID`, `userID`, `puntos`, `racha`, `nivel_actual`, `leccion_actual`, `porcentaje`, `fecha_actualizacion`, `modulo_actual`) VALUES
-(2, 18, 0, 0, 1, 1, 0, '2026-06-25 03:50:50', 'leo'),
+(2, 18, 25, 0, 1, 1, 0, '2026-09-13 18:00:34', 'leo'),
 (3, 20, 0, 0, 1, 1, 0, '2026-07-04 05:23:11', 'leo'),
 (4, 21, 0, 0, 1, 1, 0, '2026-07-04 06:13:36', 'leo'),
 (5, 28, 0, 0, 1, 1, 0, '2026-07-04 06:33:08', 'leo'),
@@ -1341,12 +1384,14 @@ INSERT INTO `progreso` (`progresoID`, `userID`, `puntos`, `racha`, `nivel_actual
 (8, 30, 0, 0, 1, 1, 0, '2026-07-15 22:19:52', 'leo'),
 (9, 31, 0, 0, 1, 1, 0, '2026-07-18 15:20:04', 'leo'),
 (10, 16, 0, 0, 1, 1, 0, '2026-07-23 05:16:11', 'leo'),
-(11, 32, 25, 0, 1, 1, 0, '2026-08-23 16:55:14', 'leo');
+(11, 32, 25, 0, 1, 1, 0, '2026-08-23 16:55:14', 'leo'),
+(12, 33, 195, 0, 1, 4, 0, '2026-09-18 13:00:47', 'leo'),
+(13, 34, 10, 0, 1, 1, 0, '2026-09-15 16:17:08', 'leo');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `progreso_libros`
+-- Table structure for table `progreso_libros`
 --
 
 CREATE TABLE `progreso_libros` (
@@ -1358,7 +1403,7 @@ CREATE TABLE `progreso_libros` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `progreso_libros`
+-- Dumping data for table `progreso_libros`
 --
 
 INSERT INTO `progreso_libros` (`progreso_libro_id`, `userID`, `libro_id`, `tiempo_segundos`, `fecha_leido`) VALUES
@@ -1381,12 +1426,13 @@ INSERT INTO `progreso_libros` (`progreso_libro_id`, `userID`, `libro_id`, `tiemp
 (17, 16, 17, 12, '2026-07-23 10:04:18'),
 (18, 16, 18, 7, '2026-07-23 10:04:39'),
 (19, 15, 3, 6, '2026-08-23 05:12:09'),
-(20, 15, 8, 20, '2026-08-23 06:51:36');
+(20, 15, 8, 20, '2026-08-23 06:51:36'),
+(21, 18, 3, 2, '2026-09-13 17:48:01');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `resenas`
+-- Table structure for table `resenas`
 --
 
 CREATE TABLE `resenas` (
@@ -1399,7 +1445,7 @@ CREATE TABLE `resenas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `resenas`
+-- Dumping data for table `resenas`
 --
 
 INSERT INTO `resenas` (`resenaID`, `userID`, `comentario`, `calificacion`, `fecha`, `fecha_edicion`) VALUES
@@ -1410,7 +1456,7 @@ INSERT INTO `resenas` (`resenaID`, `userID`, `comentario`, `calificacion`, `fech
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `silabas`
+-- Table structure for table `silabas`
 --
 
 CREATE TABLE `silabas` (
@@ -1420,7 +1466,7 @@ CREATE TABLE `silabas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `silabas`
+-- Dumping data for table `silabas`
 --
 
 INSERT INTO `silabas` (`id`, `silaba`, `audio_path`) VALUES
@@ -1431,7 +1477,7 @@ INSERT INTO `silabas` (`id`, `silaba`, `audio_path`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `suscripciones`
+-- Table structure for table `suscripciones`
 --
 
 CREATE TABLE `suscripciones` (
@@ -1444,7 +1490,7 @@ CREATE TABLE `suscripciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `suscripciones`
+-- Dumping data for table `suscripciones`
 --
 
 INSERT INTO `suscripciones` (`suscripcionID`, `userID`, `paqueteID`, `estado`, `fecha_inicio`, `fecha_fin`) VALUES
@@ -1457,7 +1503,7 @@ INSERT INTO `suscripciones` (`suscripcionID`, `userID`, `paqueteID`, `estado`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -1476,7 +1522,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`userID`, `nombre_nino`, `edad_nino`, `nombre_papa`, `correo`, `password`, `foto_nino`, `foto_padre`, `rol`, `fecha_registro`, `token_recuperacion`, `token_expiracion`) VALUES
@@ -1492,12 +1538,14 @@ INSERT INTO `usuarios` (`userID`, `nombre_nino`, `edad_nino`, `nombre_papa`, `co
 (29, 'Byronsito', 0, 'Carlos', 'byronPNG@gmail.com', '$2y$10$FOstG8YtXEkzlD8FEDvyUuz15qYPgei.VbKaF.KI6S6VQQp9eJtu.', NULL, NULL, 'usuario', '2026-07-09 22:39:29', NULL, NULL),
 (30, 'Danielito', 0, 'Cristian', 'danielito@gmail.com', '$2y$10$YiZPEQSIvSoT.o7iB8MzVuGbVbZzXC6u69DiqBKwKAHj5EUo0A3I2', NULL, NULL, 'usuario', '2026-07-09 22:40:22', NULL, NULL),
 (31, 'Andrés', 7, 'Pablito', 'hola@hotmail', '$2y$10$GYS4juhDiZIFUWzFSvHOzuU8u8.V0S1HZvFNeAOxyHsNElbSzjfga', 'av_6a5b99d74514d9.07486590.png', 'av_6a5b9a5e1506e0.92122427.jpg', 'usuario', '2026-07-18 15:09:50', NULL, NULL),
-(32, 'Alexito', 9, 'Daniel Alonso', 'daniel3030@gmail.com', '$2y$10$x03N.3k.Q2ERqgV9BboDBeTuxUHDyEzCYu7laMsk.Bb8tBtcOQYwq', NULL, NULL, 'usuario', '2026-08-23 16:51:04', NULL, NULL);
+(32, 'Alexito', 9, 'Daniel Alonso', 'daniel3030@gmail.com', '$2y$10$x03N.3k.Q2ERqgV9BboDBeTuxUHDyEzCYu7laMsk.Bb8tBtcOQYwq', NULL, NULL, 'usuario', '2026-08-23 16:51:04', NULL, NULL),
+(33, 'Jonathan', 7, 'Carlos Ponce', 'carlosponcesoriano@gmail.com', '$2y$10$tdn.V9W5eiuWuXb2lhKzYODP4ZcP9sWjx6KSnQldEuDwEXOZ4dGr6', NULL, NULL, 'usuario', '2026-09-13 01:12:23', NULL, NULL),
+(34, 'Javier', 6, 'Steffany Cortéz', 'teffacortezrivas@gmail.com', '$2y$10$47Os5D8LxA2rKs.scHS2Je5g/X1p9XXBU3Wlpeck/uLsUWtcGw4km', NULL, NULL, 'usuario', '2026-09-13 22:40:41', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario_logros`
+-- Table structure for table `usuario_logros`
 --
 
 CREATE TABLE `usuario_logros` (
@@ -1510,7 +1558,7 @@ CREATE TABLE `usuario_logros` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario_misiones`
+-- Table structure for table `usuario_misiones`
 --
 
 CREATE TABLE `usuario_misiones` (
@@ -1524,7 +1572,7 @@ CREATE TABLE `usuario_misiones` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario_respuestas`
+-- Table structure for table `usuario_respuestas`
 --
 
 CREATE TABLE `usuario_respuestas` (
@@ -1533,7 +1581,7 @@ CREATE TABLE `usuario_respuestas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuario_respuestas`
+-- Dumping data for table `usuario_respuestas`
 --
 
 INSERT INTO `usuario_respuestas` (`usuario_id`, `opcion_id`) VALUES
@@ -1561,42 +1609,52 @@ INSERT INTO `usuario_respuestas` (`usuario_id`, `opcion_id`) VALUES
 (32, 21),
 (32, 33),
 (32, 44),
-(32, 51);
+(32, 51),
+(33, 11),
+(33, 20),
+(33, 31),
+(33, 40),
+(33, 50),
+(34, 10),
+(34, 21),
+(34, 30),
+(34, 41),
+(34, 50);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `capy_actividades`
+-- Indexes for table `capy_actividades`
 --
 ALTER TABLE `capy_actividades`
   ADD PRIMARY KEY (`id`),
   ADD KEY `leccion_id` (`leccion_id`);
 
 --
--- Indices de la tabla `capy_lecciones`
+-- Indexes for table `capy_lecciones`
 --
 ALTER TABLE `capy_lecciones`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `unica_leccion` (`nivel`,`numero_leccion`);
 
 --
--- Indices de la tabla `capy_niveles`
+-- Indexes for table `capy_niveles`
 --
 ALTER TABLE `capy_niveles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `numero` (`numero`);
 
 --
--- Indices de la tabla `capy_opciones`
+-- Indexes for table `capy_opciones`
 --
 ALTER TABLE `capy_opciones`
   ADD PRIMARY KEY (`id`),
   ADD KEY `actividad_id` (`actividad_id`);
 
 --
--- Indices de la tabla `capy_progreso`
+-- Indexes for table `capy_progreso`
 --
 ALTER TABLE `capy_progreso`
   ADD PRIMARY KEY (`id`),
@@ -1605,40 +1663,40 @@ ALTER TABLE `capy_progreso`
   ADD KEY `leccion_id` (`leccion_id`);
 
 --
--- Indices de la tabla `cuestionario_opciones`
+-- Indexes for table `cuestionario_opciones`
 --
 ALTER TABLE `cuestionario_opciones`
   ADD PRIMARY KEY (`opcion_id`),
   ADD KEY `pregunta_id` (`pregunta_id`);
 
 --
--- Indices de la tabla `cuestionario_preguntas`
+-- Indexes for table `cuestionario_preguntas`
 --
 ALTER TABLE `cuestionario_preguntas`
   ADD PRIMARY KEY (`pregunta_id`);
 
 --
--- Indices de la tabla `leo_estadisticas`
+-- Indexes for table `leo_estadisticas`
 --
 ALTER TABLE `leo_estadisticas`
   ADD PRIMARY KEY (`estadisticaID`),
   ADD KEY `userID` (`userID`);
 
 --
--- Indices de la tabla `leo_lecciones`
+-- Indexes for table `leo_lecciones`
 --
 ALTER TABLE `leo_lecciones`
   ADD PRIMARY KEY (`leccionID`),
   ADD KEY `nivelID` (`nivelID`);
 
 --
--- Indices de la tabla `leo_niveles`
+-- Indexes for table `leo_niveles`
 --
 ALTER TABLE `leo_niveles`
   ADD PRIMARY KEY (`nivelID`);
 
 --
--- Indices de la tabla `leo_niveles_desbloqueo`
+-- Indexes for table `leo_niveles_desbloqueo`
 --
 ALTER TABLE `leo_niveles_desbloqueo`
   ADD PRIMARY KEY (`desbloqueoID`),
@@ -1646,14 +1704,14 @@ ALTER TABLE `leo_niveles_desbloqueo`
   ADD KEY `nivelID` (`nivelID`);
 
 --
--- Indices de la tabla `leo_palabras`
+-- Indexes for table `leo_palabras`
 --
 ALTER TABLE `leo_palabras`
   ADD PRIMARY KEY (`palabraID`),
   ADD KEY `leccionID` (`leccionID`);
 
 --
--- Indices de la tabla `leo_progreso`
+-- Indexes for table `leo_progreso`
 --
 ALTER TABLE `leo_progreso`
   ADD PRIMARY KEY (`progresoID`),
@@ -1663,93 +1721,93 @@ ALTER TABLE `leo_progreso`
   ADD KEY `palabraID` (`palabraID`);
 
 --
--- Indices de la tabla `libros`
+-- Indexes for table `libros`
 --
 ALTER TABLE `libros`
   ADD PRIMARY KEY (`libro_id`),
   ADD KEY `nivel_id` (`nivel_id`);
 
 --
--- Indices de la tabla `libro_atributos`
+-- Indexes for table `libro_atributos`
 --
 ALTER TABLE `libro_atributos`
   ADD PRIMARY KEY (`libro_id`,`opcion_id`),
   ADD KEY `opcion_id` (`opcion_id`);
 
 --
--- Indices de la tabla `logros`
+-- Indexes for table `logros`
 --
 ALTER TABLE `logros`
   ADD PRIMARY KEY (`logroID`);
 
 --
--- Indices de la tabla `misiones_diarias`
+-- Indexes for table `misiones_diarias`
 --
 ALTER TABLE `misiones_diarias`
   ADD PRIMARY KEY (`misionID`);
 
 --
--- Indices de la tabla `niveles`
+-- Indexes for table `niveles`
 --
 ALTER TABLE `niveles`
   ADD PRIMARY KEY (`nivel_id`);
 
 --
--- Indices de la tabla `oraciones`
+-- Indexes for table `oraciones`
 --
 ALTER TABLE `oraciones`
   ADD PRIMARY KEY (`oracionesID`),
   ADD KEY `pagina_id` (`pagina_id`);
 
 --
--- Indices de la tabla `paginas_libro`
+-- Indexes for table `paginas_libro`
 --
 ALTER TABLE `paginas_libro`
   ADD PRIMARY KEY (`pagina_id`),
   ADD KEY `libro_id` (`libro_id`);
 
 --
--- Indices de la tabla `paquetes`
+-- Indexes for table `paquetes`
 --
 ALTER TABLE `paquetes`
   ADD PRIMARY KEY (`paqueteID`);
 
 --
--- Indices de la tabla `paquete_beneficios`
+-- Indexes for table `paquete_beneficios`
 --
 ALTER TABLE `paquete_beneficios`
   ADD PRIMARY KEY (`beneficioID`),
   ADD KEY `paqueteID` (`paqueteID`);
 
 --
--- Indices de la tabla `progreso`
+-- Indexes for table `progreso`
 --
 ALTER TABLE `progreso`
   ADD PRIMARY KEY (`progresoID`),
   ADD KEY `userID` (`userID`);
 
 --
--- Indices de la tabla `progreso_libros`
+-- Indexes for table `progreso_libros`
 --
 ALTER TABLE `progreso_libros`
   ADD PRIMARY KEY (`progreso_libro_id`),
   ADD UNIQUE KEY `unico_usuario_libro` (`userID`,`libro_id`);
 
 --
--- Indices de la tabla `resenas`
+-- Indexes for table `resenas`
 --
 ALTER TABLE `resenas`
   ADD PRIMARY KEY (`resenaID`),
   ADD UNIQUE KEY `userID` (`userID`);
 
 --
--- Indices de la tabla `silabas`
+-- Indexes for table `silabas`
 --
 ALTER TABLE `silabas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `suscripciones`
+-- Indexes for table `suscripciones`
 --
 ALTER TABLE `suscripciones`
   ADD PRIMARY KEY (`suscripcionID`),
@@ -1757,264 +1815,264 @@ ALTER TABLE `suscripciones`
   ADD KEY `paqueteID` (`paqueteID`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`userID`),
   ADD UNIQUE KEY `correo` (`correo`);
 
 --
--- Indices de la tabla `usuario_logros`
+-- Indexes for table `usuario_logros`
 --
 ALTER TABLE `usuario_logros`
   ADD PRIMARY KEY (`usuarioLogroID`);
 
 --
--- Indices de la tabla `usuario_misiones`
+-- Indexes for table `usuario_misiones`
 --
 ALTER TABLE `usuario_misiones`
   ADD PRIMARY KEY (`usuario_misionID`);
 
 --
--- Indices de la tabla `usuario_respuestas`
+-- Indexes for table `usuario_respuestas`
 --
 ALTER TABLE `usuario_respuestas`
   ADD PRIMARY KEY (`usuario_id`,`opcion_id`),
   ADD KEY `opcion_id` (`opcion_id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `capy_actividades`
+-- AUTO_INCREMENT for table `capy_actividades`
 --
 ALTER TABLE `capy_actividades`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
--- AUTO_INCREMENT de la tabla `capy_lecciones`
+-- AUTO_INCREMENT for table `capy_lecciones`
 --
 ALTER TABLE `capy_lecciones`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT de la tabla `capy_niveles`
+-- AUTO_INCREMENT for table `capy_niveles`
 --
 ALTER TABLE `capy_niveles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `capy_opciones`
+-- AUTO_INCREMENT for table `capy_opciones`
 --
 ALTER TABLE `capy_opciones`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=819;
 
 --
--- AUTO_INCREMENT de la tabla `capy_progreso`
+-- AUTO_INCREMENT for table `capy_progreso`
 --
 ALTER TABLE `capy_progreso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
--- AUTO_INCREMENT de la tabla `cuestionario_opciones`
+-- AUTO_INCREMENT for table `cuestionario_opciones`
 --
 ALTER TABLE `cuestionario_opciones`
   MODIFY `opcion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
--- AUTO_INCREMENT de la tabla `cuestionario_preguntas`
+-- AUTO_INCREMENT for table `cuestionario_preguntas`
 --
 ALTER TABLE `cuestionario_preguntas`
   MODIFY `pregunta_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `leo_estadisticas`
+-- AUTO_INCREMENT for table `leo_estadisticas`
 --
 ALTER TABLE `leo_estadisticas`
   MODIFY `estadisticaID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `leo_lecciones`
+-- AUTO_INCREMENT for table `leo_lecciones`
 --
 ALTER TABLE `leo_lecciones`
   MODIFY `leccionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT de la tabla `leo_niveles`
+-- AUTO_INCREMENT for table `leo_niveles`
 --
 ALTER TABLE `leo_niveles`
   MODIFY `nivelID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `leo_niveles_desbloqueo`
+-- AUTO_INCREMENT for table `leo_niveles_desbloqueo`
 --
 ALTER TABLE `leo_niveles_desbloqueo`
-  MODIFY `desbloqueoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `desbloqueoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- AUTO_INCREMENT de la tabla `leo_palabras`
+-- AUTO_INCREMENT for table `leo_palabras`
 --
 ALTER TABLE `leo_palabras`
   MODIFY `palabraID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
--- AUTO_INCREMENT de la tabla `leo_progreso`
+-- AUTO_INCREMENT for table `leo_progreso`
 --
 ALTER TABLE `leo_progreso`
-  MODIFY `progresoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `progresoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT de la tabla `libros`
+-- AUTO_INCREMENT for table `libros`
 --
 ALTER TABLE `libros`
   MODIFY `libro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT de la tabla `logros`
+-- AUTO_INCREMENT for table `logros`
 --
 ALTER TABLE `logros`
   MODIFY `logroID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `misiones_diarias`
+-- AUTO_INCREMENT for table `misiones_diarias`
 --
 ALTER TABLE `misiones_diarias`
   MODIFY `misionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `niveles`
+-- AUTO_INCREMENT for table `niveles`
 --
 ALTER TABLE `niveles`
   MODIFY `nivel_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `oraciones`
+-- AUTO_INCREMENT for table `oraciones`
 --
 ALTER TABLE `oraciones`
   MODIFY `oracionesID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `paginas_libro`
+-- AUTO_INCREMENT for table `paginas_libro`
 --
 ALTER TABLE `paginas_libro`
   MODIFY `pagina_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT de la tabla `paquetes`
+-- AUTO_INCREMENT for table `paquetes`
 --
 ALTER TABLE `paquetes`
   MODIFY `paqueteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `paquete_beneficios`
+-- AUTO_INCREMENT for table `paquete_beneficios`
 --
 ALTER TABLE `paquete_beneficios`
   MODIFY `beneficioID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT de la tabla `progreso`
+-- AUTO_INCREMENT for table `progreso`
 --
 ALTER TABLE `progreso`
-  MODIFY `progresoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `progresoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT de la tabla `progreso_libros`
+-- AUTO_INCREMENT for table `progreso_libros`
 --
 ALTER TABLE `progreso_libros`
-  MODIFY `progreso_libro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `progreso_libro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT de la tabla `resenas`
+-- AUTO_INCREMENT for table `resenas`
 --
 ALTER TABLE `resenas`
   MODIFY `resenaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT de la tabla `silabas`
+-- AUTO_INCREMENT for table `silabas`
 --
 ALTER TABLE `silabas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `suscripciones`
+-- AUTO_INCREMENT for table `suscripciones`
 --
 ALTER TABLE `suscripciones`
   MODIFY `suscripcionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT de la tabla `usuario_logros`
+-- AUTO_INCREMENT for table `usuario_logros`
 --
 ALTER TABLE `usuario_logros`
   MODIFY `usuarioLogroID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `usuario_misiones`
+-- AUTO_INCREMENT for table `usuario_misiones`
 --
 ALTER TABLE `usuario_misiones`
   MODIFY `usuario_misionID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `capy_actividades`
+-- Constraints for table `capy_actividades`
 --
 ALTER TABLE `capy_actividades`
   ADD CONSTRAINT `capy_actividades_ibfk_1` FOREIGN KEY (`leccion_id`) REFERENCES `capy_lecciones` (`id`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `capy_opciones`
+-- Constraints for table `capy_opciones`
 --
 ALTER TABLE `capy_opciones`
   ADD CONSTRAINT `capy_opciones_ibfk_1` FOREIGN KEY (`actividad_id`) REFERENCES `capy_actividades` (`id`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `capy_progreso`
+-- Constraints for table `capy_progreso`
 --
 ALTER TABLE `capy_progreso`
   ADD CONSTRAINT `capy_progreso_ibfk_1` FOREIGN KEY (`leccion_id`) REFERENCES `capy_lecciones` (`id`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `cuestionario_opciones`
+-- Constraints for table `cuestionario_opciones`
 --
 ALTER TABLE `cuestionario_opciones`
   ADD CONSTRAINT `cuestionario_opciones_ibfk_1` FOREIGN KEY (`pregunta_id`) REFERENCES `cuestionario_preguntas` (`pregunta_id`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `leo_estadisticas`
+-- Constraints for table `leo_estadisticas`
 --
 ALTER TABLE `leo_estadisticas`
   ADD CONSTRAINT `leo_estadisticas_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `usuarios` (`userID`);
 
 --
--- Filtros para la tabla `leo_lecciones`
+-- Constraints for table `leo_lecciones`
 --
 ALTER TABLE `leo_lecciones`
   ADD CONSTRAINT `leo_lecciones_ibfk_1` FOREIGN KEY (`nivelID`) REFERENCES `leo_niveles` (`nivelID`);
 
 --
--- Filtros para la tabla `leo_niveles_desbloqueo`
+-- Constraints for table `leo_niveles_desbloqueo`
 --
 ALTER TABLE `leo_niveles_desbloqueo`
   ADD CONSTRAINT `leo_niveles_desbloqueo_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `usuarios` (`userID`),
   ADD CONSTRAINT `leo_niveles_desbloqueo_ibfk_2` FOREIGN KEY (`nivelID`) REFERENCES `leo_niveles` (`nivelID`);
 
 --
--- Filtros para la tabla `leo_palabras`
+-- Constraints for table `leo_palabras`
 --
 ALTER TABLE `leo_palabras`
   ADD CONSTRAINT `leo_palabras_ibfk_1` FOREIGN KEY (`leccionID`) REFERENCES `leo_lecciones` (`leccionID`);
 
 --
--- Filtros para la tabla `leo_progreso`
+-- Constraints for table `leo_progreso`
 --
 ALTER TABLE `leo_progreso`
   ADD CONSTRAINT `leo_progreso_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `usuarios` (`userID`),
@@ -2023,63 +2081,63 @@ ALTER TABLE `leo_progreso`
   ADD CONSTRAINT `leo_progreso_ibfk_4` FOREIGN KEY (`palabraID`) REFERENCES `leo_palabras` (`palabraID`);
 
 --
--- Filtros para la tabla `libros`
+-- Constraints for table `libros`
 --
 ALTER TABLE `libros`
   ADD CONSTRAINT `libros_ibfk_1` FOREIGN KEY (`nivel_id`) REFERENCES `niveles` (`nivel_id`);
 
 --
--- Filtros para la tabla `libro_atributos`
+-- Constraints for table `libro_atributos`
 --
 ALTER TABLE `libro_atributos`
   ADD CONSTRAINT `libro_atributos_ibfk_1` FOREIGN KEY (`libro_id`) REFERENCES `libros` (`libro_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `libro_atributos_ibfk_2` FOREIGN KEY (`opcion_id`) REFERENCES `cuestionario_opciones` (`opcion_id`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `oraciones`
+-- Constraints for table `oraciones`
 --
 ALTER TABLE `oraciones`
   ADD CONSTRAINT `oraciones_ibfk_1` FOREIGN KEY (`pagina_id`) REFERENCES `paginas_libro` (`pagina_id`);
 
 --
--- Filtros para la tabla `paginas_libro`
+-- Constraints for table `paginas_libro`
 --
 ALTER TABLE `paginas_libro`
   ADD CONSTRAINT `paginas_libro_ibfk_1` FOREIGN KEY (`libro_id`) REFERENCES `libros` (`libro_id`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `paquete_beneficios`
+-- Constraints for table `paquete_beneficios`
 --
 ALTER TABLE `paquete_beneficios`
   ADD CONSTRAINT `paquete_beneficios_ibfk_1` FOREIGN KEY (`paqueteID`) REFERENCES `paquetes` (`paqueteID`);
 
 --
--- Filtros para la tabla `progreso`
+-- Constraints for table `progreso`
 --
 ALTER TABLE `progreso`
   ADD CONSTRAINT `progreso_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `usuarios` (`userID`);
 
 --
--- Filtros para la tabla `progreso_libros`
+-- Constraints for table `progreso_libros`
 --
 ALTER TABLE `progreso_libros`
   ADD CONSTRAINT `progreso_libros_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `usuarios` (`userID`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `resenas`
+-- Constraints for table `resenas`
 --
 ALTER TABLE `resenas`
   ADD CONSTRAINT `resenas_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `usuarios` (`userID`);
 
 --
--- Filtros para la tabla `suscripciones`
+-- Constraints for table `suscripciones`
 --
 ALTER TABLE `suscripciones`
   ADD CONSTRAINT `suscripciones_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `usuarios` (`userID`),
   ADD CONSTRAINT `suscripciones_ibfk_2` FOREIGN KEY (`paqueteID`) REFERENCES `paquetes` (`paqueteID`);
 
 --
--- Filtros para la tabla `usuario_respuestas`
+-- Constraints for table `usuario_respuestas`
 --
 ALTER TABLE `usuario_respuestas`
   ADD CONSTRAINT `usuario_respuestas_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`userID`) ON DELETE CASCADE,
